@@ -6,4 +6,4 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "-b", ":5001", "run:run"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5001", "wsgi:app"]

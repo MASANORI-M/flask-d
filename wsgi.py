@@ -1,8 +1,11 @@
 import api.app as app
 
-run = app.create_app()
-print(run.url_map)
-run.run()
+# run = app.create_app()
+# print(run.url_map)
+# run.run()
+
+if __name__ == "__main__":
+    app.run()
 
 # from flask import Flask, render_template, request
 # from flask_sqlalchemy import SQLAlchemy

@@ -4,6 +4,9 @@ from ..models.item import Item
 item = Blueprint('item_router', __name__)
 
 @item.route("/")
+def hello():
+    return "HELLO FLAK"
+
 @item.route("/index")
 def index():
     name = request.args.get('name')
