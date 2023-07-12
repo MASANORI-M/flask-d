@@ -1,4 +1,4 @@
-import api.app as app
+from api.app import app
 
 # run = app.create_app()
 # print(run.url_map)

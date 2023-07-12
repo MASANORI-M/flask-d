@@ -1,7 +1,7 @@
 from flask import Flask
 from api.database import db
 from .views.item import item
-import config
+import api.config as config
 
 # def create_app():
 
