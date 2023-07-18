@@ -1,4 +1,4 @@
-class SystemConfig:
+class DevelopmentConfig:
     DEBUG = True
 
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}/{db-name}?charset=utf8'.format(**{
@@ -8,4 +8,4 @@ class SystemConfig:
         'db-name': 'flasktest'
     })
 
-Config = SystemConfig
+# Config = SystemConfig
