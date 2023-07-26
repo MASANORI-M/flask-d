@@ -9,6 +9,9 @@ services:
       - "5001:5001"
     depends_on:
       - db
+    networks:
+      - app-network
+
   nginx:
     build: ./docker/nginx/
     container_name: flask_nginx
@@ -16,6 +19,9 @@ services:
       - "80:80"
     depends_on:
       - python
+    networks:
+      - app-network
+
   db:
     image: mysql:8.0
     container_name: flask_db
@@ -31,6 +37,8 @@ services:
       - MYSQL_DATABASE=flasktest
       - MYSQL_USER=flaskuser
       - MYSQL_PASSWORD=flaskpass
+    networks:
+      - app-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -41,3 +49,9 @@ services:
     ports:
       - "9090:80"
     platform: linux/amd64
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
